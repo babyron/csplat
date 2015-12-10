@@ -1,0 +1,206 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  width: 100%;
+  top: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  margin: 0 auto;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+.navbar-header .navbar-brand{
+  color: #fff;
+}
+
+.container .navbar-nav{
+  width: 85%;
+}
+.container .exit{
+  float: right;
+}
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing{
+  margin-top: 13em;
+  width: 100%;
+}
+
+.marketing .row{
+  margin: 0 12em;
+}
+
+.marketing .col-lg-4 {
+  margin-left: 5em;
+  margin-right: 5em;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.p-container{
+  margin-top: 10em;
+  margin-left: 36%;
+  clear: both;
+}
+.p-container .photo{
+  float: left;
+}
+.p-container .information{
+  float: left;
+}
+.information li{
+  list-style-type: none;
+  margin: 2em;
+  font-size: 20px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #2F92C3;
+}
+
+.footer{
+  background-color: #312E2E;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  padding-top:3em;
+  padding-bottom: 3em;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+.task1{
+  margin-top: 18%;
+  text-align: center;
+}
+.task1 label{
+
+  font-size: 2em;
+  color: #16295E;
+}
+.task1 select{
+  -webkit-appearance:none;
+  width: 200px;
+  height: 40px;
+}
+
+.task2{
+  margin-top: 2%;
+  margin-left: 20%;
+}
+.task2 li{
+  list-style-type: none;
+  font-size: 1.2em;
+  color: #31BBBC;
+  font-family: Microsoft YaHei;
+}
+.task2 li input{
+  margin-left: 8em;
+  font-size: 1em;
+  color: #31BBBC;
+  font-family: Microsoft YaHei;  
+  margin-top: 10px;
+
+}
+.task2 li input[type="text"]{
+  height: 25px;
+  vertical-align:middle;
+  display: inline-block;
+  margin-left: 15px;
+}
+.task2 li p{
+  margin-top: 10px;
+}
+.task2 span{
+  color: #000;
+  font-size: 0.8em;
+}
+.task2 .c input[type="text"]{
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+}
+form > input{
+  margin-left: 25em;
+}
+.task3{
+    margin-top: 10%;
+}
+.task4{
+  text-align: center;
+  margin-top: 15%;
+  font-size: 3em;
+}
+.task4 input{
+  font-size: 0.5em;
+  margin-left: 15%;
+}
