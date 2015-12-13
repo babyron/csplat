@@ -47,33 +47,37 @@
     </div>
 
     <div class="task2">
-      <form action="" method="">
+      <form action="/mission/task2/submit" method="get">
+        <input type="hidden" name="type" value="${mission_type}" />
         <ul>
           <li>
-            任务名：&nbsp;&nbsp;&nbsp;<input type="text" /><br>
+            任务名：&nbsp;&nbsp;&nbsp;<input name="name" type="text" /><br>
           </li>
           <li>
-            横坐标：&nbsp;&nbsp;&nbsp;<input type="text" /><br>
+            横坐标：&nbsp;&nbsp;&nbsp;<input name="x" type="text" /><br>
           </li>
           <li>
-            纵坐标：&nbsp;&nbsp;&nbsp;<input type="text" /><br>
+            纵坐标：&nbsp;&nbsp;&nbsp;<input name="y" type="text" /><br>
           </li>
           <li>
-            感知次数：<input type="text" /><br>
+            感知次数：<input name="times" type="text" /><br>
           </li>
           <li>
-            酬劳单价：<input type="text" /><br>
+            酬劳单价：<input name="pay" type="text" /><br>
+          </li>
+          <li>
+            感知时长：<input name="time" type="text" /><br>
           </li>
           <li class="c">
             <p>任务属性要求：</p>
-            <input type="checkbox" /><span> 加速度计</span><input type="text" /><br>
-            <input type="checkbox" /><span> 陀螺仪</span><input type="text" /><br>
-            <input type="checkbox" /><span> 电子罗盘</span><input type="text" /><br>
-            <input type="checkbox" /><span> 气压计</span><input type="text" /><br>
-            <input type="checkbox" /><span> 指纹传感器</span><input type="text" /><br>
-            <input type="checkbox" /><span> 感光传感器</span><input type="text" /><br>
-            <input type="checkbox" /><span> 麦克风</span><input type="text" /><br>
-            <input type="checkbox" /><span> 图像传感器</span><input type="text" />
+            <span> 加速度计</span><input name="a1" type="text" /><br>
+            <span> 陀螺仪</span><input name="a2" type="text" /><br>
+            <span> 电子罗盘</span><input name="a3" type="text" /><br>
+            <span> 气压计</span><input name="a4" type="text" /><br>
+            <span> 指纹传感器</span><input name="a5" type="text" /><br>
+            <span> 感光传感器</span><input name="a6" type="text" /><br>
+            <span> 麦克风</span><input name="a7" type="text" /><br>
+            <span> 图像传感器</span><input name="a8" type="text" />
           </li>
         </ul>
         <input type="submit" />

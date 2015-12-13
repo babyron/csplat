@@ -8,14 +8,15 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
     <title>控制面板</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="/static/css/dashboard.css" rel="stylesheet">
+
 
     <script src="/static/ie-emulation-modes-warning.js"></script>
 
@@ -49,8 +50,8 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
           	<li><img src="/static/images/user.png"></li>
-            <li class="active"><a href="#">控制面板 <span class="sr-only">(current)</span></a></li>
-            <li><a href="/mission/currentboard">当前已发布任务</a></li>
+            <li><a href="/dashboard">控制面板 <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/mission/currentboard">当前已发布任务</a></li>
             <li><a href="#">数据分析</a></li>
             <li><a href="#">任务数据导出</a></li>
           </ul>
@@ -59,42 +60,37 @@
           <h1 class="page-header">当前状态</h1>
 
           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h2>已发布任务数</h2>
-              <span class="text-muted">${missionCount}</span>
+            <div class="tasklist">
+            <div class="taskitem">
+              <p>任务名称xxx</p>
+              <p>已分配次数xxx</p>
+              <p>已支出xxx</p>
+              <a href="detail">查看详情</a>
+              <a href="detail">删除</a>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h2>已支出预算</h2>
-              <span class="text-muted">${payed}</span>
+          </div>
+            <div class="tasklist">
+              <div class="taskitem">
+                <p>任务名称xxx</p>
+                <p>已分配次数xxx</p>
+                <p>已支出xxx</p>
+                <a href="detail">查看详情</a>
+                <a href="detail">删除</a>
+              </div>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h2>剩余预算</h2>
-              <span class="text-muted">${payLeft}</span>
+            <div class="tasklist">
+              <div class="taskitem">
+                <p>任务名称xxx</p>
+                <p>已分配次数xxx</p>
+                <p>已支出xxx</p>
+                <a href="detail">查看详情</a>
+                <a href="detail">删除</a>
+              </div>
             </div>
             
           </div>
-
 
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header1">下一步工作</h1>
-
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h3>继续发布任务</h3>
-              <p><a class="btn btn-default" href="/mission/task1" role="button">Go &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h3>删除任务</h3>
-              <p><a class="btn btn-default" href="task1.jsp" role="button">Go &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h3>数据分析</h3>
-              <p><a class="btn btn-default" href="task1.jsp" role="button">Go &raquo;</a></p>
-            </div>
-            
-          </div>
-
 
         </div>
       </div>

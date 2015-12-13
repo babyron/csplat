@@ -43,15 +43,15 @@
       </div>
     </div>
 
-    <form class="task1" action="" method="get">  
+    <form id="form_set" class="task1" action="/mission/task1/submit" method="get">
       <label>请选择要使用的任务分配方式：</label> <br>
-      <select name="" onchange="javascript:if (this.options[this.selectedIndex].value != '#')
-       window.open(this.options[this.selectedIndex].value, '_self');this.options[0].selected;">  
-      <option value="#">请选择</option>
-      <option value="task2">关注任务质量</option>
-      <option value="task3">关注任务报价</option>
-      </select>  
-    </form>  
+      <select name="mission_type">
+        <option value="#">请选择</option>
+        <option value="1">关注任务质量</option>
+        <option value="2">关注任务报价</option>
+      </select>
+      <input type="submit" />
+    </form>
 
     <script src="/static/jquery.min.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
