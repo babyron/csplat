@@ -2,6 +2,7 @@ package com.platform.croudsource.controller;
 
 import com.platform.croudsource.dao.MissionDao;
 import com.platform.croudsource.dao.UserDao;
+import com.platform.croudsource.entity.MinPay;
 import com.platform.croudsource.entity.Mission;
 import com.platform.croudsource.entity.UCBQA;
 import com.platform.croudsource.entity.User;
@@ -121,11 +122,10 @@ public class MissionController {
 
     @RequestMapping(value = "/currentboard")
     public String currentMission(HttpServletRequest request){
-        List<Mission> missionList = missionDao.getMissions();
-        int missionCount = missionDao.getMissionCount();
+        List<Mission> missionList = missionDao.getMissionByType(1);
 
         request.setAttribute("missionList", missionList);
-        request.setAttribute("missionCount", missionCount);
+
         return "currentboard";
     }
 
@@ -138,9 +138,38 @@ public class MissionController {
         missionList.add(mission);
         List<User> result = ucbqa.Calculation(userList, missionList, 0.05, 8, 1000);
 
+        missionDao.updateBudget(missionList);
         request.setAttribute("result", result);
         request.setAttribute("mission", missionList.get(0));
+        request.setAttribute("type", 1);
+        userDao.updateAB(result);
         return "detail";
+    }
+
+    @RequestMapping(value = "/type2")
+    public String type2(HttpServletRequest request){
+        MinPay minPay = new MinPay();
+        ArrayList<User> users = userDao.getUsers();
+        ArrayList<Mission> missions = missionDao.getMissionByType(2);
+
+        List<User> result = minPay.getUserList(users, missions);
+
+        request.setAttribute("result", result);
+        request.setAttribute("missions", missions);
+        request.setAttribute("type", 2);
+        return "detail";
+    }
+
+
+    @RequestMapping(value = "/delete")
+    public String delete(HttpServletRequest request){
+        int id = Integer.parseInt(request.getParameter("id"));
+        missionDao.deleteMission(id);
+
+        List<Mission> missionList = missionDao.getMissions();
+
+        request.setAttribute("missionList", missionList);
+        return "currentboard";
     }
 
     @RequestMapping(value = "/task2")

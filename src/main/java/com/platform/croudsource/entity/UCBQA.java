@@ -227,9 +227,10 @@ public class UCBQA {
 				temp.get(tempid).setA(matrixPlus(temp.get(tempid).getA(), matrixMultiply(x, x, 1)));
 
 				double q = quality(temp.get(tempid).getProperty(), x);
-
+				if(q == 1 && temp.get(tempid).getTime() >= task.get(i).getTime()) q = 1;
 				//totalnum++;
 				rewardtmp = rewardtmp + task.get(i).getPay();
+				temp.get(tempid).setPay(task.get(i).getPay());
 
 				temp.get(tempid).setB(matrixPlus(temp.get(tempid).getB(), matrixMultiply(q, x)));
 

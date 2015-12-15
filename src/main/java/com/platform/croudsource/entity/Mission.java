@@ -36,6 +36,26 @@ public class Mission {
         return property;
     }
 
+    public Mission(){
+
+    }
+    public Mission(Mission t){
+        this.id = t.id;
+        name = t.name == null?null:new String(t.name);
+        x = t.x;
+        y = t.y;
+        times = t.times;
+        time = t.time;
+        pay = t.pay;
+        type = t.type;
+        value = t.value;
+        property = t.property.clone();
+        failure = t.failure;
+        success = t.success;
+        budget = t.budget;
+        remainbudget  = t.remainbudget;
+    }
+
     public void setProperty(double[] property) {
         this.property = property;
     }

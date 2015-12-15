@@ -51,7 +51,7 @@
           	<li><img src="/static/images/user.png"></li>
             <li class="active"><a href="#">控制面板 <span class="sr-only">(current)</span></a></li>
             <li><a href="/mission/currentboard">当前已发布任务</a></li>
-            <li><a href="#">数据分析</a></li>
+            <li><a href="/mission/type2">数据分析</a></li>
             <li><a href="#">任务数据导出</a></li>
           </ul>
         </div>
@@ -65,11 +65,11 @@
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <h2>已支出预算</h2>
-              <span class="text-muted">${payed}</span>
+              <span class="text-muted">${budget}</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <h2>剩余预算</h2>
-              <span class="text-muted">${payLeft}</span>
+              <span class="text-muted">${remainBudget}</span>
             </div>
             
           </div>

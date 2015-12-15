@@ -52,7 +52,7 @@
           	<li><img src="/static/images/user.png"></li>
             <li><a href="/dashboard">控制面板 <span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="/mission/currentboard">当前已发布任务</a></li>
-            <li><a href="#">数据分析</a></li>
+            <li><a href="/mission/type2">数据分析</a></li>
             <li><a href="#">任务数据导出</a></li>
           </ul>
         </div>
@@ -66,8 +66,8 @@
               <c:forEach items="${missionList}" var="mission">
               <div class="taskitem">
                 <p>${mission.name}</p>
-                <a href="detail?id=${mission.id}">查看详情</a>
-                <a href="#">删除</a>
+                <a href="/mission/detail?id=${mission.id}">查看详情</a>
+                <a href="/mission/delete?id=${mission.id}">删除</a>
                 </div>
               </c:forEach>
           </div>

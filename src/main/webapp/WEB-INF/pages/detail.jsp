@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,13 +56,28 @@
         <li><img src="/static/images/user.png"></li>
         <li><a href="/dashboard">您的控制面板 <span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="/mission/currentboard">当前已发布任务</a></li>
-        <li><a href="#">数据分析</a></li>
+        <li><a href="/mission/type2">数据分析</a></li>
         <li><a href="#">任务数据导出</a></li>
       </ul>
     </div>
+
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header">当前任务回馈</h1>
-      <h3>${mission.name}</h3>
+      <h3>
+        <c:if test="${type == 1}">
+          ${mission.name}&nbsp;&nbsp;
+          <c:forEach items="${mission.property}" var="p">
+            ${p}&nbsp;&nbsp;
+          </c:forEach>
+        </c:if>
+      </h3>
+      <c:if test="${type == 2}">
+        <h5>当前使用价格激励机制的任务有：
+        </h5>
+        <c:forEach items="${missions}" var="mission">
+          <h5>任务名：${mission.name}&nbsp;&nbsp;任务id：${mission.id}</h5>
+        </c:forEach>
+      </c:if>
       <h3 class="sub-header">用户列表</h3>
       <div class="table-responsive">
         <table class="table table-striped">
@@ -68,27 +86,34 @@
             <th>用户id</th>
             <th>用户名</th>
             <th>用户感知时长</th>
-            <th>用户完成质量</th>
             <th>用户报价</th>
+            <th>提交任务集</th>
+            <th>X坐标</th>
+            <th>Y坐标</th>
+            <th>传感器水平</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>1,001</td>
-            <td>Lorem</td>
-            <td>ipsum</td>
-            <td>dolor</td>
-            <td>sit</td>
-          </tr>
-          <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
           <c:forEach items="${result}" var="user">
             <tr>
               <td>${user.id}</td>
               <td>${user.name}</td>
               <td>${user.time}</td>
-              <td>0</td>
-              <td>0</td>
+              <td>${user.bid}</td>
+              <td>
+                <c:forEach items="${user.s}" var="ss">
+                  ${ss}&nbsp;&nbsp;
+                </c:forEach>
+              </td>
+              <td>${user.x}</td>
+              <td>${user.y}</td>
+              <td>
+                <c:forEach items="${user.property}" var="p">
+                  ${p}&nbsp;&nbsp;
+                </c:forEach>
+              </td>
             </tr>
           </c:forEach>
 

@@ -17,13 +17,23 @@ public class User implements Serializable {
     private double x;
     private double y;
     private int bid;
-    private double p;    //????????????
-    private int time;	//?????¡À??
-    private ArrayList<Integer> s;  //??????
+    private double p;
+    private int time;
+    private ArrayList<Integer> s;
     private double[] theta = {0, 0, 0, 0, 0, 0, 0, 0};
     private double[][] a = new double[8][8];  //matrix A
     private double[] b = {0, 0, 0, 0, 0, 0, 0, 0}; //matrix b
     private double[] property = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    public double getPay() {
+        return pay;
+    }
+
+    public void setPay(double pay) {
+        this.pay = pay;
+    }
+
+    private double pay;
 
     public double[] getProperty() {
         return property;

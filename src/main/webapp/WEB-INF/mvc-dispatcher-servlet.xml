@@ -23,7 +23,7 @@
           class="org.apache.commons.dbcp2.BasicDataSource"
           destroy-method="close"
           p:driverClassName="com.mysql.jdbc.Driver"
-          p:url="jdbc:mysql://localhost:3306/csplat"
+          p:url="jdbc:mysql://10.4.12.240:3306/csplat"
           p:username="root"
           p:password="123456"/>
 

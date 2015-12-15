@@ -31,9 +31,9 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">任务面板</a></li>
-                <li><a href="user/profile">个人信息</a></li>
-                <li class="exit"><a href="user/login">退出</a></li>
-                <li class="exit"><a href="home">返回首页</a></li>
+                <li><a href="/user/profile">个人信息</a></li>
+                <li class="exit"><a href="/user/login">退出</a></li>
+                <li class="exit"><a href="/">返回首页</a></li>
                
               </ul>
             </div>
