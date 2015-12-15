@@ -1,6 +1,7 @@
 package com.platform.croudsource.dao;
 
 import com.platform.croudsource.entity.Mission;
+import com.sun.corba.se.impl.protocol.MinimalServantCacheLocalCRDImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -18,7 +19,7 @@ public class MissionDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private void appendA(StringBuilder sb, int a){
+    private void appendA(StringBuilder sb, Object a){
         sb.append(a);
         sb.append(" ");
     }
@@ -70,6 +71,37 @@ public class MissionDao {
         }
 
         return null;
+    }
+
+    private double[] getP(String s){
+        String ss[] = s.trim().split(" ");
+        double p[] = new double[8];
+        for(int i = 0; i < 8; i++){
+            p[i] = Double.parseDouble(ss[i]);
+        }
+        return p;
+    }
+
+    public Mission getMission(int id){
+        String sql = "select * from t_mission where Tid = ?";
+        System.out.println(id);
+
+        List<Map<String, Object>> list = jdbcTemplate.queryForList(sql, new Object[]{id});
+
+        Mission mission = new Mission();
+        Map<String, Object> map = list.get(0);
+        mission.setId((Integer) map.get("Tid"));
+        mission.setName((String) map.get("Tname"));
+        mission.setPay((Double) map.get("Tpay"));
+        mission.setType(Integer.parseInt((String) map.get("Ttype")));
+        mission.setX((Double) map.get("Tx"));
+        mission.setY((Double) map.get("Ty"));
+        mission.setTime((Integer) map.get("Ttime"));
+        mission.setTimes((Integer) map.get("Ttimes"));
+        mission.setValue((Integer) map.get("Tvalue"));
+        mission.setProperty(getP((String) map.get("Tproperty")));
+        mission.setBudget(1000);
+        return mission;
     }
 
 }

@@ -59,7 +59,7 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header">当前任务回馈</h1>
-      <h3>任务名称xxx</h3>
+      <h3>${mission.name}</h3>
       <h3 class="sub-header">用户列表</h3>
       <div class="table-responsive">
         <table class="table table-striped">
@@ -80,6 +80,18 @@
             <td>dolor</td>
             <td>sit</td>
           </tr>
+          <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+          <c:forEach items="${result}" var="user">
+            <tr>
+              <td>${user.id}</td>
+              <td>${user.name}</td>
+              <td>${user.time}</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </c:forEach>
+
           </tbody>
         </table>
       </div>
