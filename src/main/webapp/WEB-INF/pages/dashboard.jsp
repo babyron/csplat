@@ -61,7 +61,7 @@
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
               <h2>已发布任务数</h2>
-              <span class="text-muted">${missionCount}</span>
+              <span class="text-muted">${count}</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <h2>已支出预算</h2>

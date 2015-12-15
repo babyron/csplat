@@ -59,33 +59,18 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">当前状态</h1>
 
+          <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
           <div class="row placeholders">
             <div class="tasklist">
-            <div class="taskitem">
-              <p>任务名称xxx</p>
-              <p>已分配次数xxx</p>
-              <p>已支出xxx</p>
-              <a href="detail">查看详情</a>
-              <a href="detail">删除</a>
-            </div>
+              <c:forEach items="${missionList}" var="mission">
+              <div class="taskitem">
+                <p>${mission.name}</p>
+                <a href="detail?id=${mission.id}">查看详情</a>
+                <a href="#">删除</a>
+                </div>
+              </c:forEach>
           </div>
-            <div class="tasklist">
-              <div class="taskitem">
-                <p>任务名称xxx</p>
-                <p>已分配次数xxx</p>
-                <p>已支出xxx</p>
-                <a href="detail">查看详情</a>
-                <a href="detail">删除</a>
-              </div>
-            </div>
-            <div class="tasklist">
-              <div class="taskitem">
-                <p>任务名称xxx</p>
-                <p>已分配次数xxx</p>
-                <p>已支出xxx</p>
-                <a href="detail">查看详情</a>
-                <a href="detail">删除</a>
-              </div>
             </div>
             
           </div>

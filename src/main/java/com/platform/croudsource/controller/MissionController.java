@@ -121,8 +121,11 @@ public class MissionController {
 
     @RequestMapping(value = "/currentboard")
     public String currentMission(HttpServletRequest request){
-        missionDao.getMissions();
-        System.out.println(missionDao.getMissionCount());
+        List<Mission> missionList = missionDao.getMissions();
+        int missionCount = missionDao.getMissionCount();
+
+        request.setAttribute("missionList", missionList);
+        request.setAttribute("missionCount", missionCount);
         return "currentboard";
     }
 

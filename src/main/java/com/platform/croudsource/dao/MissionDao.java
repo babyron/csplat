@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -62,15 +63,26 @@ public class MissionDao {
     public List<Mission> getMissions(){
         String sql = "select * from t_mission";
 
+        List<Mission> missionList = new ArrayList<Mission>();
         List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
 
         for(Map<String, Object> map:list){
-            for(String s:map.keySet()){
-                System.out.println(s);
-            }
+            Mission mission = new Mission();
+            mission.setId((Integer) map.get("Tid"));
+            mission.setName((String) map.get("Tname"));
+            mission.setPay((Double) map.get("Tpay"));
+            mission.setType(Integer.parseInt((String) map.get("Ttype")));
+            mission.setX((Double) map.get("Tx"));
+            mission.setY((Double) map.get("Ty"));
+            mission.setTime((Integer) map.get("Ttime"));
+            mission.setTimes((Integer) map.get("Ttimes"));
+            mission.setValue((Integer) map.get("Tvalue"));
+            mission.setProperty(getP((String) map.get("Tproperty")));
+            mission.setBudget(1000);
+            missionList.add(mission);
         }
 
-        return null;
+        return missionList;
     }
 
     private double[] getP(String s){

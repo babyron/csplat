@@ -51,7 +51,7 @@
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
         <li><img src="/static/images/user.png"></li>
-        <li><a href="dashboard.html">您的控制面板 <span class="sr-only">(current)</span></a></li>
+        <li><a href="/dashboard">您的控制面板 <span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="/mission/currentboard">当前已发布任务</a></li>
         <li><a href="#">数据分析</a></li>
         <li><a href="#">任务数据导出</a></li>
